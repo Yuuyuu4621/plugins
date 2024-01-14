@@ -19,7 +19,7 @@ public class restartmessage implements CommandExecutor
             return true;
         }
         final Player p = (Player) commandSender;
-        String title = "test";
+        String title = ChatColor.RED + "サーバー再起動";
 
         p.sendTitle("", title, 10, 70, 20);
         return true;
