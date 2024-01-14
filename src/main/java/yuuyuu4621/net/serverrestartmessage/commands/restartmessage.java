@@ -13,15 +13,16 @@ public class restartmessage implements CommandExecutor
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings)
     {
-        if (!commandSender.isOp())
+        if (!commandSender.isOp())//OP餅以外の実行を拒否
         {
-            commandSender.sendMessage(ChatColor.RED + "あなたには権限がありません！ (You don't have permission!)");
+            commandSender.sendMessage(ChatColor.RED + "あなたには権限がありません！ (You don't have permission!)");//実行者がOPを持っていなかった時の処理
             return true;
         }
-        final Player p = (Player) commandSender;
-        String title = ChatColor.RED + "サーバー再起動";
+        commandSender.sendMessage(ChatColor.GREEN + "実行しました！");//実行時の処理
+        final Player p = (Player) commandSender;//Playerをpと宣言
+        String title = ChatColor.RED + "サーバー再起動";//実行時の処理
 
-        p.sendTitle("", title, 10, 70, 20);
+        p.sendTitle("", title, 10, 70, 20);//フェードアウト・フェードインの時間指定
         return true;
     }
 }
