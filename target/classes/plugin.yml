@@ -9,3 +9,7 @@ commands:
     description: サーバーの再起動時にメッセージを送信します。
     permission: restartmessage.message
     permission-message: *none
+  countdown:
+    description: チャット欄でカウントダウンを行います。
+    permission: restartmessage.countdown
+    permission-message: *none
