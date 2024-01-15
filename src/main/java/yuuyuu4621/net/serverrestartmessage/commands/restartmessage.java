@@ -13,7 +13,7 @@ public class restartmessage implements CommandExecutor
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings)
     {
-        if (!commandSender.isOp())//OP餅以外の実行を拒否
+        if (!commandSender.isOp())//OP持ち以外の実行を拒否
         {
             commandSender.sendMessage(ChatColor.RED + "あなたには権限がありません！ (You don't have permission!)");//実行者がOPを持っていなかった時の処理
             return true;
