@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class fly implements CommandExecutor
@@ -17,7 +18,16 @@ public class fly implements CommandExecutor
             commandSender.sendMessage(ChatColor.RED + "あなたには権限がありません！ (You don't have permission!");
             return true;
         }
-        commandSender.sendMessage(ChatColor.BLUE + "実行しました！ (Excuted!)");
+        final Player p = (Player) commandSender;
+        if (p.getAllowFlight())
+        {
+            p.setAllowFlight(false);
+            commandSender.sendMessage(ChatColor.RED + "FLYモードを無効化しました。");
+            return true;
+        }
+
+            p.setAllowFlight(true);
+        commandSender.sendMessage(ChatColor.GREEN + "FLYモードを有効化しました。");
         return true;
     }
 }
