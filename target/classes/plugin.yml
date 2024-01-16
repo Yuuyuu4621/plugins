@@ -13,3 +13,7 @@ commands:
     description: チャット欄でカウントダウンを行います。
     permission: restartmessage.countdown
     permission-message: *none
+  kwhitelist:
+    description: ホワイトリストを有効化し、OP権限を持っていない全てのプレイヤーをキックします。
+    permission: restartmessage.kwhitelist
+    permission-message: *none
